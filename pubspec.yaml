@@ -1,0 +1,37 @@
+name: tradefolio
+description: "A new Flutter project."
+
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.3
+
+#------------------------ PACKAGES ------------------------#
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  get: ^4.6.6
+  http: ^1.2.2
+  shimmer: ^3.0.0
+  rename: ^3.0.2
+
+#---------------------- DEV PACKAGES ----------------------#
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+
+#----------------------- LOCAL ASSETS ----------------------#
+  assets:
+    - assets/icons/ 
+    - assets/images/
