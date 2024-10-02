@@ -4,9 +4,10 @@ class JColor {
   JColor._();
 
   // App Basic Colors
-  static const Color primary = Color(0xFF06C25E);
-  static const Color secondary = Color(0xFFFFA115);
-  static const Color accent = Color(0xFF4F0618);
+  static const Color primary = Color(0xFF435314);
+  static const Color secondary = Color(0xFF464c40);
+  static const Color accent = Color(0xFFc1ef02);
+  static const Color background = Color(0xFF1c2411);
 
   // Error and validation colors
   static const Color error = Color.fromARGB(255, 255, 77, 77);
@@ -22,10 +23,10 @@ class JColor {
   //Netural Shades
   static const Color black = Color(0xFF232323);
   static const Color white = Color(0xFFFFFFFF);
-  static const Color softGrey = Color(0xFFF4F4F4);
-  static const Color grey = Color(0xFFE0E0E0);
-  static const Color darkGrey = Color(0xFF939393);
-  static const Color darkerGrey = Color(0xFF4F4F4F);
+  static const Color softGrey = Color(0xFFdcdcdd);
+  static const Color grey = Color(0xFFa8a9aa);
+  static const Color darkGrey = Color(0xFF787b78);
+  static const Color darkerGrey = Color(0xFF4f5346);
 
   //text colours
   static const Color textPrimary = Color.fromARGB(255, 24, 25, 32);
@@ -38,5 +39,16 @@ class JColor {
     spreadRadius: 5,
     blurRadius: 2,
     offset: const Offset(0, 1),
+  );
+
+  //Gradient
+
+  static Gradient primaryGradient = LinearGradient(
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    colors: [
+      Colors.white.withOpacity(0.03),
+      Colors.white.withOpacity(0.1),
+    ],
   );
 }

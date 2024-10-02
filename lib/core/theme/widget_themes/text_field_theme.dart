@@ -21,18 +21,18 @@ class JTextFormFieldTheme {
           const TextStyle().copyWith(color: JColor.black.withOpacity(0.8)),
       border: const OutlineInputBorder().copyWith(
         borderRadius: const BorderRadius.all(Radius.circular(JSize.inputFieldRadiusXl)),
-        borderSide: const BorderSide(width: 1, color: JColor.grey),
+        borderSide: const BorderSide(width: 0, color:JColor.darkGrey),
       ),
       enabledBorder: const OutlineInputBorder().copyWith(
-        borderRadius: BorderRadius.circular(JSize.inputFieldRadiusLg),
-        borderSide: const BorderSide(width: 1, color: JColor.grey),
+        borderRadius: BorderRadius.circular(JSize.inputFieldRadiusXl),
+        borderSide: const BorderSide(width: 0, color: JColor.grey),
       ),
       focusedBorder: const OutlineInputBorder().copyWith(
-        borderRadius: BorderRadius.circular(JSize.inputFieldRadiusLg),
-        borderSide: const BorderSide(width: 1, color: JColor.primary),
+        borderRadius: BorderRadius.circular(JSize.inputFieldRadiusXl),
+        borderSide: const BorderSide(width: 0, color: JColor.primary),
       ),
       errorBorder: const OutlineInputBorder().copyWith(
-        borderRadius: BorderRadius.circular(JSize.inputFieldRadiusLg),
+        borderRadius: BorderRadius.circular(JSize.inputFieldRadiusXl),
         borderSide: const BorderSide(width: 1, color: JColor.warning),
       ),
       focusedErrorBorder: const OutlineInputBorder().copyWith(
@@ -40,7 +40,7 @@ class JTextFormFieldTheme {
         borderSide: const BorderSide(width: 2, color: JColor.warning),
       ),
       filled: true,
-      fillColor: JColor.grey,
+      fillColor: JColor.white,
       contentPadding:JSize.inputFieldPadding ,
       suffixStyle: const TextStyle(    
       fontSize: 16,          
@@ -64,22 +64,22 @@ class JTextFormFieldTheme {
           const TextStyle().copyWith(color: JColor.white.withOpacity(0.8)),
       border: const OutlineInputBorder().copyWith(
         borderRadius: BorderRadius.circular(JSize.inputFieldRadiusXl),
-        borderSide: const BorderSide(width: 1, color: JColor.darkGrey),
+        borderSide: const BorderSide(width: 0, color: JColor.darkGrey),
       ),
       enabledBorder: const OutlineInputBorder().copyWith(
-        borderRadius: BorderRadius.circular(JSize.inputFieldRadiusLg),
-        borderSide: const BorderSide(width: 1, color: JColor.secondary),
+        borderRadius: BorderRadius.circular(JSize.inputFieldRadiusXl),
+        borderSide: const BorderSide(width: 0, color: JColor.secondary),
       ),
       focusedBorder: const OutlineInputBorder().copyWith(
-        borderRadius: BorderRadius.circular(JSize.inputFieldRadiusLg),
-        borderSide: const BorderSide(width: 1, color: JColor.white),
+        borderRadius: BorderRadius.circular(JSize.inputFieldRadiusXl),
+        borderSide: const BorderSide(width: 0, color: JColor.white),
       ),
       errorBorder: const OutlineInputBorder().copyWith(
-        borderRadius: BorderRadius.circular(JSize.inputFieldRadiusLg),
+        borderRadius: BorderRadius.circular(JSize.inputFieldRadiusXl),
         borderSide: const BorderSide(width: 1, color: JColor.warning),
       ),
       focusedErrorBorder: const OutlineInputBorder().copyWith(
-        borderRadius: BorderRadius.circular(JSize.inputFieldRadiusLg),
+        borderRadius: BorderRadius.circular(JSize.inputFieldRadiusXl),
         borderSide: const BorderSide(width: 2, color: JColor.warning),
       ),
       fillColor: JColor.white,

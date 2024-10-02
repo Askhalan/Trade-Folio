@@ -57,13 +57,14 @@ class JSize {
 
 // Input field
   static const double inputFieldRadiusXl = 15.0;
-  static const double inputFieldRadiusLg = 9.0;
+  static const double inputFieldRadiusLg = 7.0;
   static const double spaceBtwInputFields = 16.0;
 
 
 // Default Pading 
   static const double defaultPaddingValue = 20.0;
-  static EdgeInsets defaultPadding = const EdgeInsets.all(20);
+  static EdgeInsets defaultPadding = const EdgeInsets.all(7);
+  static EdgeInsets defaultInnerPadding = const EdgeInsets.all(12);
   static EdgeInsets defaultPadSymetric = const EdgeInsets.symmetric(horizontal: 20);
   //-------
   static EdgeInsets userCardInPad = const EdgeInsets.all(10);
