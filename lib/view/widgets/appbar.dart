@@ -20,10 +20,10 @@ class JAppBar extends StatelessWidget implements PreferredSizeWidget {
     return Padding(
       padding: JSize.defaultPadding,
       child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+        filter: ImageFilter.blur(sigmaX: 0, sigmaY: 0),
         child: Container(
           padding: JSize.defaultInnerPadding,
-          height: 200,
+          height: 220,
           decoration: BoxDecoration(
               gradient: JColor.primaryGradient,
               borderRadius: BorderRadius.circular(JSize.borderRadLg * 5)),
@@ -46,5 +46,6 @@ class JAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(JDeviceUtil.getAppBarHeight() * 3);
+  Size get preferredSize =>
+      Size.fromHeight(JDeviceUtil.getAppBarHeight() * 2.5);
 }

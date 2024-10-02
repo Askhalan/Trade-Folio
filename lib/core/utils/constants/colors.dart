@@ -7,7 +7,7 @@ class JColor {
   static const Color primary = Color(0xFF435314);
   static const Color secondary = Color(0xFF464c40);
   static const Color accent = Color(0xFFc1ef02);
-  static const Color background = Color(0xFF1c2411);
+  static const Color background = Color.fromARGB(255, 14, 22, 5);
 
   // Error and validation colors
   static const Color error = Color.fromARGB(255, 255, 77, 77);

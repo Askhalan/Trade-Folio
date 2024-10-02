@@ -64,6 +64,7 @@ class JSize {
 // Default Pading 
   static const double defaultPaddingValue = 20.0;
   static EdgeInsets defaultPadding = const EdgeInsets.all(7);
+  static EdgeInsets defaultPaddingHalf = const EdgeInsets.all(5);
   static EdgeInsets defaultInnerPadding = const EdgeInsets.all(12);
   static EdgeInsets defaultPadSymetric = const EdgeInsets.symmetric(horizontal: 20);
   //-------
