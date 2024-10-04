@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_floating_bottom_bar/flutter_floating_bottom_bar.dart';
@@ -5,6 +7,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:tradefolio/core/utils/constants/colors.dart';
 import 'package:tradefolio/core/utils/constants/sizes.dart';
 import 'package:tradefolio/view/home/scn_home.dart';
+import 'package:tradefolio/view/wishlist/scn_wishlist.dart';
 
 class NavigationMenu extends StatefulWidget {
   const NavigationMenu({
@@ -22,7 +25,7 @@ class NavigationMenuState extends State<NavigationMenu>
   @override
   void initState() {
     currentPage = 0;
-    tabController = TabController(length: 4, vsync: this,);
+    tabController = TabController(length: 2, vsync: this,);
     tabController.animation!.addListener(
       () {
         final value = tabController.animation!.value.round();
@@ -67,9 +70,9 @@ class NavigationMenuState extends State<NavigationMenu>
           controller: tabController,
           dragStartBehavior: DragStartBehavior.down,
           physics: const BouncingScrollPhysics(),
-          children: const [
+          children:  [
             ScnHome(),
-            ScnHome(),
+            WatchList(),
           ],
         ),
         child: TabBar(

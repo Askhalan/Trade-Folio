@@ -47,8 +47,16 @@ class JColor {
     begin: Alignment.topCenter,
     end: Alignment.bottomCenter,
     colors: [
-      Colors.white.withOpacity(0.03),
       Colors.white.withOpacity(0.1),
+      Colors.white.withOpacity(0.3),
+    ],
+  );
+  static Gradient secondryGradient = LinearGradient(
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    colors: [
+      // Colors.white.withOpacity(0.1),
+      Colors.white.withOpacity(0.5),
     ],
   );
 }

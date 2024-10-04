@@ -9,11 +9,11 @@ import 'package:tradefolio/controller/ui_controller.dart';
 import 'package:tradefolio/core/utils/constants/colors.dart';
 import 'package:tradefolio/core/utils/constants/sizes.dart';
 import 'package:tradefolio/core/utils/devices/device_utility.dart';
-import 'package:tradefolio/view/widgets/animated_search_bar.dart';
 
 class JAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const JAppBar({super.key});
+  const JAppBar({super.key, required this.child});
 
+  final Widget child;
   @override
   Widget build(BuildContext context) {
     Get.put(UiController());
@@ -22,25 +22,12 @@ class JAppBar extends StatelessWidget implements PreferredSizeWidget {
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 0, sigmaY: 0),
         child: Container(
-          padding: JSize.defaultInnerPadding,
-          height: 220,
-          decoration: BoxDecoration(
-              gradient: JColor.primaryGradient,
-              borderRadius: BorderRadius.circular(JSize.borderRadLg * 5)),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              AnimatedSearchBar(
-                widget: TextFormField(
-                  decoration: InputDecoration(
-                    suffix:
-                        IconButton(onPressed: () {}, icon: Icon(Icons.search)),
-                  ),
-                ),
-              )
-            ],
-          ),
-        ),
+            padding: JSize.defaultInnerPadding,
+            height: 220,
+            decoration: BoxDecoration(
+                gradient: JColor.primaryGradient,
+                borderRadius: BorderRadius.circular(JSize.borderRadLg * 5)),
+            child: child),
       ),
     );
   }

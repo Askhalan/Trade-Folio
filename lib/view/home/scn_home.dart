@@ -6,6 +6,7 @@ import 'package:tradefolio/controller/ui_controller.dart';
 import 'package:tradefolio/core/utils/constants/sizes.dart';
 import 'package:tradefolio/core/utils/helpers/helper_functions.dart';
 import 'package:tradefolio/view/home/widgets/search_item_tile.dart';
+import 'package:tradefolio/view/widgets/animated_search_bar.dart';
 import 'package:tradefolio/view/widgets/appbar.dart';
 import 'package:tradefolio/view/widgets/gap.dart';
 
@@ -16,7 +17,21 @@ class ScnHome extends StatelessWidget {
   Widget build(BuildContext context) {
     final UiController uiController = Get.put(UiController());
     return Scaffold(
-      appBar: JAppBar(),
+      appBar: JAppBar(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            AnimatedSearchBar(
+              widget: TextFormField(
+                decoration: InputDecoration(
+                  suffix:
+                      IconButton(onPressed: () {}, icon: Icon(Icons.search)),
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
       body: Padding(
         padding: JSize.defaultInnerPadding,
         child: Column(
