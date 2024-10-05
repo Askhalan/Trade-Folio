@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tradefolio/controller/search_controller.dart';
 import 'package:tradefolio/controller/ui_controller.dart';
 import 'package:tradefolio/core/utils/constants/sizes.dart';
 import 'package:tradefolio/core/utils/helpers/helper_functions.dart';
@@ -16,27 +17,19 @@ class ScnHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final UiController uiController = Get.put(UiController());
+    final HomeController homeController = Get.put(HomeController());
     return Scaffold(
       appBar: JAppBar(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            AnimatedSearchBar(
-              widget: TextFormField(
-                decoration: InputDecoration(
-                  suffix:
-                      IconButton(onPressed: () {}, icon: Icon(Icons.search)),
-                ),
-              ),
-            )
-          ],
+          children: [AnimatedSearchBar()],
         ),
       ),
       body: Padding(
         padding: JSize.defaultInnerPadding,
         child: Column(
           children: [
-            // Search bar and rest of the UI
+            // Search bar
             Obx(
               () => AnimatedSwitcher(
                 duration: Duration(milliseconds: 800),
@@ -47,9 +40,13 @@ class ScnHome extends StatelessWidget {
                           opacity: uiController.searchEnabled.value ? 1.0 : 0.0,
                           duration: Duration(milliseconds: 1200),
                           child: ListView.separated(
-                            itemCount: 5,
+                            itemCount: homeController.searchResults.length,
                             itemBuilder: (BuildContext context, int index) {
-                              return SearchItemTile();
+                              if (homeController.searchResults.isNotEmpty) {
+                                return SearchItemTile(
+                                    data: homeController.searchResults[index]);
+                              }
+                              return SizedBox();
                             },
                             separatorBuilder: (context, index) => JGap(h: 15),
                           ),

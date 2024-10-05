@@ -4,18 +4,21 @@ import 'package:flutter/material.dart';
 import 'package:tradefolio/core/utils/constants/colors.dart';
 import 'package:tradefolio/core/utils/constants/sizes.dart';
 import 'package:tradefolio/core/utils/helpers/helper_functions.dart';
+import 'package:tradefolio/model/company_with_quote_model.dart';
 import 'package:tradefolio/view/home/widgets/add_button.dart';
 import 'package:tradefolio/view/widgets/divider_vertical.dart';
 
 class SearchItemTile extends StatelessWidget {
   const SearchItemTile({
     super.key,
+    required this.data,
   });
 
+  final CompanyWithQuoteModel data;
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: JSize.defaultPaddingHalf,
+      padding: JSize.defaultPadding,
       height: 80,
       width: JHelperFunctions.screenWidth(context),
       decoration: BoxDecoration(
@@ -23,25 +26,21 @@ class SearchItemTile extends StatelessWidget {
           borderRadius: BorderRadius.circular(JSize.borderRadLg * 2.5)),
       child: Row(
         children: [
-          Container(
-            height: 80,
-            width: 73,
-            decoration: BoxDecoration(
-                color: JColor.grey,
-                borderRadius: BorderRadius.circular(JSize.borderRadLg * 2)),
-          ),
-          Spacer(),
           //-- Company Name
-          Text('Apple',
-              style: Theme.of(context)
-                  .textTheme
-                  .titleLarge!
-                  .copyWith(fontSize: 20, color: JColor.white)),
+          SizedBox(
+            width: JHelperFunctions.screenWidth(context) * 0.4,
+            child: Text(data.name,
+                overflow: TextOverflow.ellipsis,
+                style: Theme.of(context)
+                    .textTheme
+                    .titleLarge!
+                    .copyWith(fontSize: 20, color: JColor.white)),
+          ),
           Spacer(),
           DividerVertical(),
           Spacer(),
           //-- Price
-          Text('\u20B9 3000',
+          Text('\u20B9 ${data.low}',
               style: Theme.of(context)
                   .textTheme
                   .titleMedium!
@@ -49,7 +48,9 @@ class SearchItemTile extends StatelessWidget {
           Spacer(
             flex: 5,
           ),
-          AddButton(onPressed: (){},),
+          AddButton(
+            onPressed: () {},
+          ),
         ],
       ),
     );

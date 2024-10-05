@@ -59,4 +59,6 @@ class JColor {
       Colors.white.withOpacity(0.5),
     ],
   );
+
+  static var transperent;
 }

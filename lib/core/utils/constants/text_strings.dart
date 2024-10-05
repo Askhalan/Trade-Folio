@@ -1,6 +1,4 @@
 
-
-
 class JTexts {
   // -- GLOBAL Texts
   static const String and = "and";
@@ -25,48 +23,29 @@ class JTexts {
   static const String viewStores = "View all stores";
 
 
-//--
-static const String home = "Home";
-static const String cart = "Cart";
-static const String myOrders = "My Orders";
-static const String accounts = "Accounts";
-  // -- HOME
-  static const String headerTitle = "What would you like to do today?";
-  static const String topPicsTitle = "Top picks for you";
-  static const String trending = "Trending";
-  static const String crazeDeals = "Craze Deals";
-  //
-  static const String foodDelivery = "Food Delivery";
-  static const String medicines = "Medicines";
-  static const String petSupplies = "Pet Supplies";
-  static const String gifts = "Gifts";
-  static const String meat = "Meat";
-  static const String cosmetic = "Cosmetic";
-  static const String stationery = "Stationery";
-  static const String stores = "Stores";
+// API Words
 
-  // -- NOTIFICATION
+  
+  static const String apiLimitResponse =
+      "Thank you for using Alpha Vantage! Our standard API rate limit is 25 requests per day.";
+  static const String apiLimitMessage =
+      "API rate limit reached. Please try again tomorrow or subscribe to a premium plan.";
+  static const String apiLimitTitle = "API Limit";
 
-  static const String homeappBarTitle = "Welcome back";
-  static const String topPicBannerTitle1 = "DISCOUNT 25% ALL FRUITS";
-  static const String crazeDealsBannerTitle =
-      "Customer favourite top supermarkets";
-  static const String refferAndEarn = "Reffer & Earn";
-  static const String refferAndEarnBody = "Invite your friends & earn 15% off";
-  static const String nearbyStores = "Nearby stores";
 
-  //-----
-  static const String pName = "Mithas Bhandar";
-  static const String pCat = "Sweets, North Indian";
-  static const String pLocation = "(store location) | 6.4 kms'";
-  static const String pRating = "4.1";
-  static const String pTime = "45 mins";
 
-  //------
-  static const String storeName = "Freshly Baker";
-  static const String storeCat = "Sweets, North Indian";
-  static const String storeLoc = "Site No - 1  |  6.4 kms";
+// "The JSON data coming from API will be having the key as [bestMatches] "
+  static const String searchResponse = "bestMatches";
 
-  static const String storeOffer = "Upto 10% OFF";
-  static const String storeItems = "3400+ items available";
+
+
+  //-- API Error messages
+  static const String noMatchFound = "No matching companies found.";
+  static const String e400 =  "Bad Request";
+  static const String e429 = "Too many requests.";
+  static const String e500 = "Internal server error.";
+  static const String eDefault = "An unexpected error:";
+  
 }
+
+

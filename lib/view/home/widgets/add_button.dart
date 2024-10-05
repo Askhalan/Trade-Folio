@@ -12,8 +12,8 @@ final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 80,
-      width: 73,
+      height: 70,
+      width: 70,
       decoration: BoxDecoration(
           border: Border.all(width: 1, color: JColor.grey),
           borderRadius: BorderRadius.circular(JSize.borderRadLg * 2)),

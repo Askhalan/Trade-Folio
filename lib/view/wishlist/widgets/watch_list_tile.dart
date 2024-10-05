@@ -19,7 +19,7 @@ class WatchListTile extends StatelessWidget {
       child: Stack(
         children: [
           Container(
-            padding: JSize.defaultInnerPadding,
+            padding: JSize.defaultPadding,
             decoration: BoxDecoration(
                 color: JColor.darkGrey.withOpacity(0.5),
                 borderRadius: BorderRadius.circular(JSize.borderRadLg * 2)),
