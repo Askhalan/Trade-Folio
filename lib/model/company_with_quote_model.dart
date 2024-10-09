@@ -13,9 +13,7 @@ class CompanyWithQuoteModel {
   final String high;
   final String low;
   final String price;
-  final String volume;
-  final String latestTradingDay;
-  final String change;
+
 
   CompanyWithQuoteModel({
     required this.symbol,
@@ -27,9 +25,7 @@ class CompanyWithQuoteModel {
     required this.high,
     required this.low,
     required this.price,
-    required this.volume,
-    required this.latestTradingDay,
-    required this.change,
+
   });
 
   factory CompanyWithQuoteModel.fromCompanyAndQuote(CompanyModel company, GlobalQuoteModel quote) {
@@ -43,9 +39,7 @@ class CompanyWithQuoteModel {
       high: quote.high,
       low: quote.low,
       price: quote.price,
-      volume: quote.volume,
-      latestTradingDay: quote.latestTradingDay,
-      change: quote.change,
+
     );
   }
 }

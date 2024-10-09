@@ -6,23 +6,25 @@ import 'package:tradefolio/core/utils/constants/sizes.dart';
 
 class AddButton extends StatelessWidget {
   const AddButton({
-    super.key, this.onPressed,
+    super.key,
+    this.onPressed,
   });
-final void Function()? onPressed;
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 70,
-      width: 70,
-      decoration: BoxDecoration(
-          border: Border.all(width: 1, color: JColor.grey),
-          borderRadius: BorderRadius.circular(JSize.borderRadLg * 2)),
-      child: IconButton(
-          onPressed: onPressed,
-          icon: Icon(
-            Icons.add,
-            color: JColor.accent,
-          )),
+    return InkWell(
+      onTap: onPressed,
+      child: Container(
+        height: 70,
+        width: 70,
+        decoration: BoxDecoration(
+            border: Border.all(width: 1, color: JColor.grey),
+            borderRadius: BorderRadius.circular(JSize.borderRadLg * 2)),
+        child: Icon(
+          Icons.add,
+          color: JColor.accent,
+        ),
+      ),
     );
   }
 }

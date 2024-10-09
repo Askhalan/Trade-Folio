@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
+import 'package:tradefolio/core/utils/constants/api_constants.dart';
 import 'package:tradefolio/core/utils/constants/text_strings.dart';
 import 'package:tradefolio/core/utils/helpers/http_helper.dart';
 import 'package:tradefolio/model/company_model.dart';
@@ -40,7 +41,7 @@ class HomeController extends GetxController {
     }
 
     try {
-      final response = await http.get(Uri.parse('https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=$keyword&apikey=A14P6HI89O2X3BVZ'));
+      final response = await http.get(Uri.parse('$searchUrl$keyword$apiKey'));
 
       final data = await JHttpHelper.handleHttpResponse(
           response); // Using the helper function
@@ -88,7 +89,7 @@ class HomeController extends GetxController {
 // --- Function for fetching the price
   Future<GlobalQuoteModel?> fetchPrice(String symbol) async {
     try {
-      final response = await http.get(Uri.parse('https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=$symbol&apikey=A14P6HI89O2X3BVZ'));
+      final response = await http.get(Uri.parse('$quoteUrl$symbol$apiKey'));
 
       final data =
           await JHttpHelper.handleHttpResponse(response); //helper function

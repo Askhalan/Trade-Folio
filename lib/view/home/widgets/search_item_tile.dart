@@ -1,6 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:get/get_core/get_core.dart';
+import 'package:get/get_instance/get_instance.dart';
+import 'package:tradefolio/controller/watchlist_controller.dart';
 import 'package:tradefolio/core/utils/constants/colors.dart';
 import 'package:tradefolio/core/utils/constants/sizes.dart';
 import 'package:tradefolio/core/utils/helpers/helper_functions.dart';
@@ -17,6 +20,7 @@ class SearchItemTile extends StatelessWidget {
   final CompanyWithQuoteModel data;
   @override
   Widget build(BuildContext context) {
+    final WatchlistController watchlistController = Get.find();
     return Container(
       padding: JSize.defaultPadding,
       height: 80,
@@ -40,7 +44,7 @@ class SearchItemTile extends StatelessWidget {
           DividerVertical(),
           Spacer(),
           //-- Price
-          Text('\u20B9 ${data.low}',
+          Text('\u20B9 ${data.price}',
               style: Theme.of(context)
                   .textTheme
                   .titleMedium!
@@ -49,7 +53,9 @@ class SearchItemTile extends StatelessWidget {
             flex: 5,
           ),
           AddButton(
-            onPressed: () {},
+            onPressed: () {
+              watchlistController.addToWatchlist(data);
+            },
           ),
         ],
       ),

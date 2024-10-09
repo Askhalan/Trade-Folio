@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tradefolio/controller/search_controller.dart';
 import 'package:tradefolio/controller/ui_controller.dart';
+import 'package:tradefolio/controller/watchlist_controller.dart';
 import 'package:tradefolio/core/utils/constants/sizes.dart';
 import 'package:tradefolio/core/utils/helpers/helper_functions.dart';
 import 'package:tradefolio/view/home/widgets/search_item_tile.dart';
@@ -18,6 +19,7 @@ class ScnHome extends StatelessWidget {
   Widget build(BuildContext context) {
     final UiController uiController = Get.put(UiController());
     final HomeController homeController = Get.put(HomeController());
+    Get.put(WatchlistController());
     return Scaffold(
       appBar: JAppBar(
         child: Row(

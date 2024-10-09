@@ -1,20 +1,26 @@
+import 'package:hive/hive.dart';
+
+part 'global_quote_model.g.dart';
+
+@HiveType(typeId: 12)
 class GlobalQuoteModel {
+  @HiveField(0)
   final String symbol;
+
+  @HiveField(1)
   final String high;
+
+  @HiveField(2)
   final String low;
-  final String price;
-  final String volume;
-  final String latestTradingDay;
-  final String change;
+
+  @HiveField(3)
+   String price;
 
   GlobalQuoteModel({
     required this.symbol,
     required this.high,
     required this.low,
     required this.price,
-    required this.volume,
-    required this.latestTradingDay,
-    required this.change,
   });
 
   factory GlobalQuoteModel.fromJson(Map<String, dynamic> json) {
@@ -23,9 +29,6 @@ class GlobalQuoteModel {
       high: json['03. high'],
       low: json['04. low'],
       price: json['05. price'],
-      volume: json['06. volume'],
-      latestTradingDay: json['07. latest trading day'],
-      change: json['09. change'],
     );
   }
 }

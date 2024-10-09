@@ -7,7 +7,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:tradefolio/core/utils/constants/colors.dart';
 import 'package:tradefolio/core/utils/constants/sizes.dart';
 import 'package:tradefolio/view/home/scn_home.dart';
-import 'package:tradefolio/view/wishlist/scn_wishlist.dart';
+import 'package:tradefolio/view/watchlist/scn_wishlist.dart';
 
 class NavigationMenu extends StatefulWidget {
   const NavigationMenu({

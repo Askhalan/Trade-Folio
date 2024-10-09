@@ -2,18 +2,27 @@
 
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:tradefolio/controller/watchlist_controller.dart';
 import 'package:tradefolio/core/utils/constants/colors.dart';
 import 'package:tradefolio/core/utils/constants/sizes.dart';
+import 'package:tradefolio/core/utils/helpers/helper_functions.dart';
+import 'package:tradefolio/model/company_model.dart';
 import 'package:tradefolio/view/widgets/gap.dart';
 
 class WatchListTile extends StatelessWidget {
   const WatchListTile({
     super.key,
+    required this.company,
   });
+
+  final CompanyModel company;
 
   @override
   Widget build(BuildContext context) {
+    final WatchlistController watchlistController = Get.find();
+    watchlistController.syncStockPriceIfNeeded(company);
     return BackdropFilter(
       filter: ImageFilter.blur(sigmaX: 0, sigmaY: 0),
       child: Stack(
@@ -34,18 +43,22 @@ class WatchListTile extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Nike',
+                          company.symbol,
                           style: Theme.of(context)
                               .textTheme
                               .bodyLarge!
                               .copyWith(fontSize: 16, color: JColor.white),
                         ),
-                        Text(
-                          'Nike, Inc',
-                          style: Theme.of(context)
-                              .textTheme
-                              .labelSmall!
-                              .copyWith(color: JColor.white),
+                        SizedBox(
+                          width: JHelperFunctions.screenWidth(context) * 0.3,
+                          child: Text(
+                            company.name,
+                            overflow: TextOverflow.ellipsis,
+                            style: Theme.of(context)
+                                .textTheme
+                                .labelSmall!
+                                .copyWith(color: JColor.white),
+                          ),
                         ),
                       ],
                     ),
@@ -54,7 +67,7 @@ class WatchListTile extends StatelessWidget {
                 JGap(
                   extra: true,
                 ),
-                Text('90,26',
+                Text(company.quote?.price ?? '',
                     style: Theme.of(context)
                         .textTheme
                         .bodyLarge!
@@ -71,7 +84,11 @@ class WatchListTile extends StatelessWidget {
               decoration: BoxDecoration(
                   color: JColor.error.withOpacity(0.8),
                   borderRadius: BorderRadius.circular(JSize.borderRadLg)),
-              child: IconButton(onPressed: () {}, icon: Icon(Iconsax.trash4)),
+              child: IconButton(
+                  onPressed: () {
+                    watchlistController.deleteCompanyFromWatchlist(company);
+                  },
+                  icon: Icon(Iconsax.trash4)),
             ),
           )
         ],
